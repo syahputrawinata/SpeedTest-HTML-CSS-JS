@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Nama</title>
+</head>
+<body>
+    <input type="search" id="cari-input" placeholder="Cari...">
+    <button id="cari-button">Cari</button>
+    <div id="cari-result"></div>
+
+    <script>
+        const cariInput = document.getElementById('cari-input');
+        const cariButton = document.getElementById('cari-button');
+        const cariResult = document.getElementById('cari-result');
+
+        cariButton.addEventListener('click',() => {
+            const searchText = cariInput.value;
+
+            if(searchText ==='') {
+                cariResult.innerHTML = 'Tidak Mencari Data....';
+            }else{
+                cariResult.innerHTML = `Data ditemukan: ${searchText}`;
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="imagepilihan">
+        <img src="1.jpg" alt="1" id="image1">
+        <img src="2.png" alt="2" id="image2">
+        <img src="3.jpg" alt="3" id="image3">
+    </div>
+
+    <form action="" id="form">
+        <label for="pilihimage">Pilih Gambar:</label>
+            <select name="" id="pilihimage">
+                <option value="image1">Gambar 1</option>
+                <option value="image2">Gambar 2</option>
+                <option value="image3">Gambar 3</option>
+            </select>
+        
+        <label for="pilihopacity">Pilih opacity:</label>
+            <select name="" id="pilihopacity">
+                <option value="1">1</option>
+                <option value="0.5">0.5</option>
+                <option value="0.2">0.2</option>
+            </select>
+
+            <button type="button" onclick="gantiimagedanopacity()">Kirim</button>
+    </form>
+
+
+    <script>
+        function gantiimagedanopacity() {
+            var pilihimage = document.getElementById('pilihimage').value;
+            var pilihopacity = document.getElementById('pilihopacity').value;
+
+            var images = document.querySelectorAll('#imagepilihan img');
+            images.forEach(function(image) {
+                image.style.display = 'none'});
+
+            var image = document.getElementById(pilihimage);
+            image.style.display = 'block';
+            image.style.opacity = pilihopacity;
+        }
+    </script>
+</body>
+</html>

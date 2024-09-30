@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="alert">Munculkan Alert</button>
+    <div id="boxalert" class="hide">
+        <span id="pesan">Danger! Alert akan tertutup dalam <span id="countdown">5</span></span>
+    </div>
+
+    <script>
+        document.getElementById("alert").addEventListener("click", function(){
+            var boxalert = document.getElementById('boxalert');
+            var elementcountdown = document.getElementById('countdown');
+            var countdown = 5;
+
+            boxalert.style.display ='block';
+
+            var countdownInterval = setInterval(function() {
+                countdown--;
+                elementcountdown.textContent = countdown;
+
+                if(countdown === 1) {
+                    clearInterval(countdownInterval);
+                    setTimeout(function() {
+                        boxalert.style.display = 'none';
+                    }, 1000);
+                }
+            }, 1000);
+        });
+            
+    </script>
+</body>
+</html>
